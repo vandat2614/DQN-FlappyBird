@@ -6,22 +6,34 @@ A reinforcement learning agent trained with **Deep Q-Network (DQN)** to play **F
 
 ---
 
+## 🌍 Environment
+
+This project uses the external environment [`FlappyBird-v0`](https://github.com/markub3327/flappy-bird-gymnasium), a Gymnasium-compatible implementation of the classic Flappy Bird game.
+
+This code is designed to work with the vector-based observation space, which is enabled by setting `use_lidar=False`.  If you're interested in the meaning of each feature, please refer to the original repository.
+
+
+---
+
 ## 📂 Project Structure
 
 ```
 DQN-FlappyBird/
 ├── config.yaml              # Contains settings for training, evaluation, and model architecture
-├── train.py                 # Training logic for training the agent
-├── test.py                  # Demo: run a single episode with a trained agent
-├── eval.py                  # Generates statistics and evaluation metrics
 ├── main.py                  # Entry point to load env, model, and run
-├── neural_network.py        
-├── experience_replay.py     # Experience replay buffer
+├── src/
+│   ├── train.py             # Training logic for training the agent
+│   ├── test.py              # Demo: run a single episode with a trained agent
+│   ├── eval.py              # Generates statistics and evaluation metrics
+│   ├── neural_network.py
+│   └── experience_replay.py # Experience replay buffer
 ├── runs/
-│   └── train/
-│       ├── weights/         # Checkpoints: best.pt, last.pt
-│       └── log              # Text log of training performance
-└── README.md
+    ├── train/
+    │   ├── weights/         # Checkpoints: best.pt, last.pt
+    │   └── log              # Text log of training performance
+    └── eval/
+        └── results.json     #  Stores evaluation results:
+
 ```
 
 ---
