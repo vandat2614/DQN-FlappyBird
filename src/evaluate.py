@@ -11,11 +11,12 @@ def evaluate(env, model, config, device):
     num_episodes = config['num_episodes']
     base_dir = config['base_dir']
     eval_dir = os.path.join(base_dir, 'eval')
+    log_path = os.path.join(base_dir, "eval", "log")
     os.makedirs(eval_dir, exist_ok=True)
 
     scores = []
 
-    for _ in range(num_episodes):
+    for episode in range(num_episodes):
         state, _ = env.reset()
 
         while True:
@@ -27,7 +28,14 @@ def evaluate(env, model, config, device):
             state, reward, terminated, truncated, info = env.step(action)
 
             if terminated or truncated:
-                scores.append(info['score'])
+                score = info['score']
+                scores.append(score)
+
+                log_message = f"Episode {episode + 1}, score {score}"
+                print(log_message)
+                with open(log_path, 'a') as file:
+                    file.write(log_message + '\n')
+
                 break
 
     stats = {
