@@ -24,4 +24,4 @@ train:
 
 evaluate:
   base_dir: "runs"
-  num_episodes: 500
+  num_episodes: 1000

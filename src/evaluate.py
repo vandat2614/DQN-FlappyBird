@@ -12,6 +12,8 @@ def evaluate(env, model, config, device):
     base_dir = config['base_dir']
     eval_dir = os.path.join(base_dir, 'eval')
     log_path = os.path.join(base_dir, "eval", "log")
+    scores_path = os.path.join(eval_dir, 'scores.npy')
+
     os.makedirs(eval_dir, exist_ok=True)
 
     scores = []
@@ -45,6 +47,8 @@ def evaluate(env, model, config, device):
         "avg": float(np.mean(scores)),
         "std": float(np.std(scores)),
     }
+
+    np.save(scores_path, np.array(scores))
 
     with open(os.path.join(eval_dir, 'results.json'), 'w') as f:
         json.dump(stats, f, indent=4)
