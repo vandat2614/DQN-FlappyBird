@@ -1,5 +1,4 @@
 import torch
-import time
 
 def test(env, model, device):
     model = model.to(device)
