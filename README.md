@@ -2,8 +2,7 @@
 
 A reinforcement learning agent trained with **Deep Q-Network (DQN)** to play **Flappy Bird**, built using PyTorch and Gymnasium.
 
-<!-- ![Flappy Bird](https://media.giphy.com/media/l41lN2gXQ1i8v5cYQ/giphy.gif) -->
-
+![Gameplay Demo](assets\demo.gif)
 ---
 
 ## 🌍 Environment
@@ -72,7 +71,7 @@ python main.py --mode eval --config_path config.yaml --weights_path path/to/your
 - Loads a trained `.pt` model to evaluate the agent's performance in the environment.
 - Results are saved to `runs/eval/eval_log.json`
 - Evaluation parameters (e.g., number of episodes) are specified under the `evaluate` section of config
-
+- It’s recommended to set a `limit_score` in the `env` section of the config to prevent episodes from running indefinitely.
 ---
 
 ## 🎮 Test

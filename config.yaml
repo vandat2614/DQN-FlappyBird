@@ -1,7 +1,7 @@
 env:
   id: FlappyBird-v0
   params:
-    score_limit: null
+    score_limit: 100
     use_lidar: False
 
 model:
@@ -24,4 +24,4 @@ train:
 
 evaluate:
   base_dir: "runs"
-  num_episodes: 10000
+  num_episodes: 20

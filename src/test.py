@@ -2,8 +2,6 @@ import torch
 import time
 
 def test(env, model, device):
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-   
     model = model.to(device)
     model.eval()
 
