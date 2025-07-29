@@ -83,3 +83,18 @@ python main.py --mode test --config_path config.yaml --weights_path runs/train/w
 ```
 
 - Runs a single episode with the trained agent and renders it in real-time.
+
+---
+
+## 📈 Performance
+
+To evaluate the model I currently trained, I ran it on ``1000 independent episodes`` with `score_limit = 1000`.
+
+| Metric        | Value      |
+|---------------|------------|
+| Min Score     | 4.0        |
+| Max Score     | 1000.0     |
+| Average Score | 942.66     |
+| Std Deviation | 191.62     |
+
+You can test it using the provided pretrained weights: `weights/best.pt`
