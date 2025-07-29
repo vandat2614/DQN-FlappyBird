@@ -2,7 +2,7 @@
 
 A reinforcement learning agent trained with **Deep Q-Network (DQN)** to play **Flappy Bird**, built using PyTorch and Gymnasium.
 
-![Gameplay Demo](assets\demo.gif)
+![Gameplay Demo](assets/demo.gif)
 
 ---
 

@@ -31,11 +31,11 @@ def evaluate(env, model, config, device):
                 break
 
     stats = {
+        "num_episodes": num_episodes,
         "min": float(np.min(scores)),
         "max": float(np.max(scores)),
         "avg": float(np.mean(scores)),
         "std": float(np.std(scores)),
-        # "scores": scores,
     }
 
     with open(os.path.join(eval_dir, 'results.json'), 'w') as f:
